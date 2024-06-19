@@ -15,4 +15,9 @@ public class Doctor extends Employee {
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
+
+    @Override
+    public int getJob() {
+        return 0;
+    }
 }

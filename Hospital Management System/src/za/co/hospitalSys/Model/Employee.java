@@ -1,6 +1,6 @@
 package za.co.hospitalSys.Model;
 
-public class Employee extends User {
+public abstract class Employee extends User {
     private double salary;
 
     public Employee() {
@@ -14,4 +14,7 @@ public class Employee extends User {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+    //\\ ==abstract_method== //\\
+    public abstract int getJob();
 }
