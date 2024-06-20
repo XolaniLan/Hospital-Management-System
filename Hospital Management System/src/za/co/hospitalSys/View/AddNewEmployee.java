@@ -1,6 +1,12 @@
 package za.co.hospitalSys.View;
 
-import za.co.hospitalSys.Model.*;
+import za.co.hospitalSys.Controller.CreateEmployee;
+import za.co.hospitalSys.Model.Cashier;
+import za.co.hospitalSys.Model.Database;
+import za.co.hospitalSys.Model.Employee;
+import za.co.hospitalSys.Model.Option;
+import za.co.hospitalSys.Model.Receptionist;
+import za.co.hospitalSys.Model.User;
 
 import java.util.Scanner;
 
@@ -60,9 +66,19 @@ public class AddNewEmployee implements Option {
                 employee.setPassword(confirmPassword);
                 employee.setSalary(salary);
                 break;
+            default:
+                employee = new Employee() {
+                    @Override
+                    public int getJob() {
+                        return 1-1;
+                    }
+                };
         }
 
+        if (new CreateEmployee((employee, database).isCreated())) {
+            System.out.println("Employee added successfully.");
 
+        }
 
     }
 
